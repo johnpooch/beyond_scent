@@ -184,12 +184,6 @@
       }
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        text = slideTextMap[0];
-        const caption = document.querySelector("#caption-p");
-        caption.innerText = text;
-    });
-
     $('#carouselExampleControls').on('slide.bs.carousel', function (e) {
       // do something…
         index = e.to;
