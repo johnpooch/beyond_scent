@@ -205,6 +205,7 @@
     function incrementCounter() {
         counter++;
         if ( counter === len ) {
+            console.log('HEY');
             text = slideTextMap[0];
             const caption = document.querySelector("#caption-p");
             caption.innerText = text;
