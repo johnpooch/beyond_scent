@@ -7,6 +7,10 @@
     <style>
     * {box-sizing:border-box}
 
+    .loader {
+      padding-top: 5rem;
+    }
+
     /* Slideshow container */
     .slideshow-container {
       max-width: 750px;
@@ -118,7 +122,12 @@
 <body>
     <main role="main">
         <div class="container">
-            <div id="carouselExampleControls" class="carousel slide slideshow-container" data-interval="false">
+            <div class="loader d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide slideshow-container" style="display: none;" data-interval="false">
               <!-- <h1 style="text-align: center;">Beyond Scent</h1> -->
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -205,10 +214,14 @@
     function incrementCounter() {
         counter++;
         if ( counter === len ) {
-            console.log('HEY');
             text = slideTextMap[0];
             const caption = document.querySelector("#caption-p");
             caption.innerText = text;
+
+            const loader = document.querySelector(".loader");
+            loader.remove()
+            const carousel = document.querySelector(".carousel");
+            carousel.style.display = 'inherit';
         }
     }
     </script>
